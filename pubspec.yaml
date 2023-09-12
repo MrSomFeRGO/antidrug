@@ -50,6 +50,10 @@ flutter_gen:
 flutter:
   uses-material-design: true
 
+  assets:
+    - assets/svg/
+    - assets/png/
+
   fonts:
     - family: OpenSans
       fonts:

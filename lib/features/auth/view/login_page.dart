@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                     desc: 'Неверный лоигн или пароль!',
                     context: context);
               } else if (state is LoginSuccess) {
-                context.go('/');
+                context.go(Routes.feedNamedPage);
               }
             },
             child: LoadingOverlay(
