@@ -11,6 +11,22 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
+class $AssetsPngGen {
+  const $AssetsPngGen();
+
+  /// File path: assets/png/first.png
+  AssetGenImage get first => const AssetGenImage('assets/png/first.png');
+
+  /// File path: assets/png/second.png
+  AssetGenImage get second => const AssetGenImage('assets/png/second.png');
+
+  /// File path: assets/png/thrid.png
+  AssetGenImage get thrid => const AssetGenImage('assets/png/thrid.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [first, second, thrid];
+}
+
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
@@ -30,6 +46,7 @@ class $AssetsSvgGen {
 class Assets {
   Assets._();
 
+  static const $AssetsPngGen png = $AssetsPngGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
