@@ -49,6 +49,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  base58check:
+    dependency: transitive
+    description:
+      name: base58check
+      sha256: "6c300dfc33e598d2fe26319e13f6243fea81eaf8204cb4c6b69ef20a625319a5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
+  bech32:
+    dependency: transitive
+    description:
+      name: bech32
+      sha256: "156cbace936f7720c79a79d16a03efad343b1ef17106716e04b8b8e39f99f7f7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.2"
   bloc:
     dependency: transitive
     description:
@@ -358,14 +374,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
-  flutter_plugin_android_lifecycle:
-    dependency: transitive
+  flutter_multi_formatter:
+    dependency: "direct main"
     description:
-      name: flutter_plugin_android_lifecycle
-      sha256: f185ac890306b5779ecbd611f52502d8d4d63d27703ef73161ca0407e815f02c
+      name: flutter_multi_formatter
+      sha256: a09218d96304fe918a66dba7265d31932a8a40bc7865e55d1e1133e5fc290713
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.16"
+    version: "2.11.9"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -1117,14 +1133,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.2"
-  yandex_mapkit:
-    dependency: "direct main"
-    description:
-      name: yandex_mapkit
-      sha256: "9a197369a57a484872546c1d508f1c11e8366c9c2000269032d220dbf210cec5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.3.3"
 sdks:
   dart: ">=3.0.0 <4.0.0"
   flutter: ">=3.10.0"

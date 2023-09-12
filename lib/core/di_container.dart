@@ -1,3 +1,4 @@
+import 'package:antidrugs/features/auth/bloc/auth_bloc.dart';
 import 'package:antidrugs/repository/local/abstract_local_repository.dart';
 import 'package:antidrugs/repository/local/impl/local_repository.dart';
 import 'package:get_it/get_it.dart';
@@ -15,4 +16,5 @@ Future<void> init() async {
 
   // reg blocs
   // _di.registerLazySingleton(() => );
+  _di.registerLazySingleton(() => AuthBloc());
 }

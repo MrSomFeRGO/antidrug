@@ -20,11 +20,11 @@ dependencies:
   flutter_svg: ^2.0.2
   loading_overlay: ^0.3.0
   shared_preferences: ^2.0.18
-  yandex_mapkit: ^3.2.0
   another_flushbar: ^1.12.30
   url_launcher: ^6.1.10
   geolocator: ^9.0.2
   cached_network_image: ^3.2.3
+  flutter_multi_formatter: ^2.11.9
 
 dev_dependencies:
   flutter_test:
