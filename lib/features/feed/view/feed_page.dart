@@ -22,17 +22,12 @@ class _FeedPageState extends State<FeedPage> {
     super.initState();
     _controller = WebViewController()
       ..setNavigationDelegate(NavigationDelegate(
-        onPageStarted: (url) {
+        onPageStarted: (_) {
           setState(() {
             _loadingPercentage = 0;
           });
         },
-        onProgress: (progress) {
-          setState(() {
-            _loadingPercentage = progress;
-          });
-        },
-        onPageFinished: (url) {
+        onPageFinished: (_) {
           setState(() {
             _loadingPercentage = 100;
           });
@@ -41,6 +36,12 @@ class _FeedPageState extends State<FeedPage> {
       ..loadRequest(
         Uri.parse('https://flutter.dev'),
       );
+  }
+
+  @override
+  void dispose() {
+    _controller.loadRequest(Uri.parse('about:blank'));
+    super.dispose();
   }
 
   @override

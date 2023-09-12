@@ -1,5 +1,4 @@
 import 'package:antidrugs/features/navigation/bloc/appbar_bloc.dart';
-import 'package:antidrugs/gen/assets.gen.dart';
 import 'package:antidrugs/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -28,11 +27,6 @@ class _MotivationPageState extends State<MotivationPage> {
             _loadingPercentage = 0;
           });
         },
-        onProgress: (progress) {
-          setState(() {
-            _loadingPercentage = progress;
-          });
-        },
         onPageFinished: (url) {
           setState(() {
             _loadingPercentage = 100;
@@ -42,6 +36,12 @@ class _MotivationPageState extends State<MotivationPage> {
       ..loadRequest(
         Uri.parse('https://flutter.dev'),
       );
+  }
+
+  @override
+  void dispose() {
+    _controller.loadRequest(Uri.parse('about:blank'));
+    super.dispose();
   }
 
   @override
