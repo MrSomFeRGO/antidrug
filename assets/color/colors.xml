@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue" type="material">#3F75FF</color>
+    <color name="black" type="material">#0D1922</color>
+    <color name="green" type="material">#19AD16</color>
+    <color name="red" type="material">#E20000</color>
+    <color name="yellow" type="material">#FFD53F</color>
+    <color name="light-white" type="material">#F9F9FF</color>
+    <color name="success" type="material">#81c883</color>
+    <color name="light-success" type="material">#e8f4e8</color>
+    <color name="warning" type="material">#ffb64e</color>
+    <color name="light-warning" type="material">#fef2da</color>
+    <color name="error" type="material">#ff8962</color>
+    <color name="light-error" type="material">#fee7e0</color>
+    <color name="info" type="material">#63aceb</color>
+    <color name="light-info" type="material">#e0eefb</color>
+    <color name="chart-1" type="material">#f4dc85</color>
+    <color name="chart-2" type="material">#ff5f9f</color>
+    <color name="chart-3" type="material">#ff7d53</color>
+    <color name="chart-4" type="material">#ffc000</color>
+    <color name="chart-5" type="material">#8bff00</color>
+</resources>
