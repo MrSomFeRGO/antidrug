@@ -1,4 +1,6 @@
 import 'package:antidrugs/features/auth/bloc/auth_bloc.dart';
+import 'package:antidrugs/features/report_page/bloc/report_page_bloc.dart';
+import 'package:antidrugs/features/report_page/view/report_page.dart';
 import 'package:antidrugs/features/navigation/bloc/appbar_bloc.dart';
 import 'package:antidrugs/features/navigation/bloc/navigation_bloc.dart';
 import 'package:antidrugs/features/navigation/bloc/snackbar_display_bloc.dart';
@@ -23,4 +25,5 @@ Future<void> init() async {
   _di.registerLazySingleton(() => AppbarBloc());
   _di.registerLazySingleton(() => NavigationBloc());
   _di.registerLazySingleton(() => SnackbarDisplayBloc());
+  _di.registerLazySingleton(() => ReportPageBloc());
 }

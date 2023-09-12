@@ -4,9 +4,14 @@ import 'package:antidrugs/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'constants.dart';
+
 class Routes {
   static const root = '/';
   static const loginNamedPage = '/login';
+  static const mainPage = '/main';
+  static const reportPage = '/report';
+
   static const feedNamedPage = '/feed';
   static const motivationNamedPage = '/motivation';
   static const denunciationNamedPage = '/denunciation';

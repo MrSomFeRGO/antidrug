@@ -16,6 +16,7 @@ dependencies:
   go_router: ^7.0.1
   equatable: ^2.0.5
   flutter_bloc: ^8.1.2
+  file_picker: ^5.5.0
   get_it: ^7.6.0
   flutter_svg: ^2.0.2
   loading_overlay: ^0.3.0
@@ -24,6 +25,7 @@ dependencies:
   url_launcher: ^6.1.10
   geolocator: ^9.0.2
   cached_network_image: ^3.2.3
+  video_player: ^2.7.1
   flutter_multi_formatter: ^2.11.9
 
 dev_dependencies:

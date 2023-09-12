@@ -7,6 +7,7 @@ class AntidrugsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("crashme!!!!!!");
     return MaterialApp.router(scrollBehavior: const ScrollBehavior().copyWith(scrollbars: false),
       routerConfig: router,
       theme: mainTheme,

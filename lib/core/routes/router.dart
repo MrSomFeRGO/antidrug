@@ -4,6 +4,7 @@ import 'package:antidrugs/features/feed/view/feed_page.dart';
 import 'package:antidrugs/features/motivation/view/motivation_page.dart';
 import 'package:antidrugs/features/navigation/bloc/navigation_bloc.dart';
 import 'package:antidrugs/features/navigation/view/navigation_page.dart';
+import 'package:antidrugs/features/report_page/view/report_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -43,7 +44,7 @@ final GoRouter router = GoRouter(
         GoRoute(
           name: 'denunciation',
           path: Routes.denunciationNamedPage,
-          builder: (context, state) => const LoginPage(),
+          builder: (context, state) => const ReportPage(),
         ),
       ],
     ),

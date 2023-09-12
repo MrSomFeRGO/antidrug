@@ -11,9 +11,9 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
