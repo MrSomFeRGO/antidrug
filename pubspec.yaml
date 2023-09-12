@@ -27,6 +27,7 @@ dependencies:
   cached_network_image: ^3.2.3
   video_player: ^2.7.1
   flutter_multi_formatter: ^2.11.9
+  webview_flutter: ^4.2.4
 
 dev_dependencies:
   flutter_test:
