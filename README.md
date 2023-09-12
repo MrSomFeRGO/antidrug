@@ -1,16 +1,35 @@
-# antidrugs
+# Antidrugs
 
-A new Flutter project.
+***********
 
-## Getting Started
+### Структура приложения
+```
+├───core
+│   ├───routes
+│   ├───theme
+│   └───utils
+├───features
+│   └───auth
+│       ├───bloc
+│       ├───view
+│       └───widgets
+├───gen
+└───repository
+    └───local
+        └───impl
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+```
+### Core
+* Общий код и тд.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Features
+* Фичи / основная логика
+* Например auth и весь код необходимый для авторизации
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Gen
+* Все сгенерированные файлы
+
+### Repository
+* Вся работы с данными
+* Пишем абстрактный класс и делаем его имплементацию в отдельной папке
