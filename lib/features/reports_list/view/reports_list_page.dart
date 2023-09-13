@@ -1,7 +1,12 @@
+import 'dart:math';
+
 import 'package:antidrugs/core/utils/constants.dart';
+import 'package:antidrugs/features/navigation/bloc/appbar_bloc.dart';
 import 'package:antidrugs/features/reports_list/dto/donosObj.dart';
 import 'package:antidrugs/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
 class ReportsListPage extends StatefulWidget {
@@ -44,57 +49,141 @@ class _ReportsListPageState extends State<ReportsListPage> {
   ];
 
   @override
+  void initState() {
+    GetIt.I<AppbarBloc>().add(const AppbarAddTitle(title: 'Список доносов'));
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Material(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: _donoses.length,
-          itemBuilder: (context, i) {
+      child: Column(
+        children: [
+          Expanded(child: ListView.builder(
+              itemCount: _donoses.length,
+              itemBuilder: (context, i) {
             return Padding(
               padding: const EdgeInsets.only(top: 8.0, left: 20, right: 20),
               child: Material(
-                elevation: 6,
-                shadowColor: const Color(0xff0500FF).withOpacity(0.1),
-                borderRadius: BorderRadius.circular(10),
-                child: ListTile(
-                  onTap: () {
-                    context.push(Routes.denunciationSingleNamedPage,
-                        extra: _donoses[i]);
-                  },
-                  shape: RoundedRectangleBorder(
+                    elevation: 6,
+                    shadowColor: const Color(0xff0500FF).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(10),
-                  ),
-                  tileColor: ColorName.lightWhite,
-                  contentPadding: EdgeInsets.zero,
-                  visualDensity: const VisualDensity(vertical: 4),
-                  // не нужно
-                  // leading: ObjectsListLeading(
-                  //   image: state.objects[i].objectImage,
-                  // ),
-                  title: Padding(
-                    padding: const EdgeInsets.only(left: 12),
-                    child: Container(
-                      height: 60,
-                      alignment: Alignment.topLeft,
-                      child: Text(_donoses[i].text),
+                    child: ListTile(
+                      onTap: () {
+                        context.push(Routes.denunciationSingleNamedPage,
+                            extra: _donoses[i]);
+                      },
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      tileColor: ColorName.lightWhite,
+                      contentPadding: EdgeInsets.zero,
+                      visualDensity: const VisualDensity(vertical: 4),
+                      title: Padding(
+                        padding: const EdgeInsets.only(left: 12),
+                        child: Container(
+                          height: 20,
+                          alignment: Alignment.topLeft,
+                          child: Text(_donoses[i].text),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(left: 12),
+                        child: Text(_donoses[i].userId),
+                      ),
+                      trailing: Container(
+                        width: 20,
+                        decoration: BoxDecoration(
+                          color: _donoses[i].userId == '34563757' ? Colors.green : Colors.red,
+                          shape: BoxShape.rectangle,
+                          borderRadius: const BorderRadius.only(
+                              topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
+                        ),
+                      ),
+                      // не нужно
+                      // leading: ObjectsListLeading(
+                      //   image: state.objects[i].objectImage,
+                      // ),
+                      // title: Padding(
+                      //   padding: const EdgeInsets.only(left: 12),
+                      //   child: Container(
+                      //     height: 60,
+                      //     alignment: Alignment.topLeft,
+                      //     child: Text(_donoses[i].text),
+                      //   ),
+                      // ),
+                      // trailing: Padding(
+                      //   padding: const EdgeInsets.only(left: 12),
+                      //   child: Container(
+                      //     height: 60,
+                      //     alignment: Alignment.topLeft,
+                      //     child: Text(_donoses[i].userId),
+                      //   ),
+                      // ),
                     ),
                   ),
-                  trailing: Padding(
-                    padding: const EdgeInsets.only(left: 12),
-                    child: Container(
-                      height: 60,
-                      alignment: Alignment.topLeft,
-                      child: Text(_donoses[i].userId),
-                    ),
-                  ),
-                ),
-              ),
-            );
-          },
-        ),
+                );
+          }))
+        ],
       ),
     );
   }
+//   return Scaffold(
+//     body: Column(
+//       children:[
+//         Expanded(
+//           child: Padding(
+//             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+//             child: ListView.builder(
+//               //shrinkWrap: true,
+//               itemCount: _donoses.length,
+//               itemBuilder: (context, i) {
+//                 return Padding(
+//                   padding: const EdgeInsets.only(top: 8.0, left: 20, right: 20),
+//                   child: Material(
+//                     elevation: 6,
+//                     shadowColor: const Color(0xff0500FF).withOpacity(0.1),
+//                     borderRadius: BorderRadius.circular(10),
+//                     child: ListTile(
+//                       onTap: () {
+//                         context.push(Routes.denunciationSingleNamedPage,
+//                             extra: _donoses[i]);
+//                       },
+//                       shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(10),
+//                       ),
+//                       tileColor: ColorName.lightWhite,
+//                       contentPadding: EdgeInsets.zero,
+//                       visualDensity: const VisualDensity(vertical: 4),
+//                       // не нужно
+//                       // leading: ObjectsListLeading(
+//                       //   image: state.objects[i].objectImage,
+//                       // ),
+//                       title: Padding(
+//                         padding: const EdgeInsets.only(left: 12),
+//                         child: Container(
+//                           height: 60,
+//                           alignment: Alignment.topLeft,
+//                           child: Text(_donoses[i].text),
+//                         ),
+//                       ),
+//                       trailing: Padding(
+//                         padding: const EdgeInsets.only(left: 12),
+//                         child: Container(
+//                           height: 60,
+//                           alignment: Alignment.topLeft,
+//                           child: Text(_donoses[i].userId),
+//                         ),
+//                       ),
+//                     ),
+//                   ),
+//                 );
+//               },
+//             ),
+//           ),
+//         ),
+//       ],
+//     ),
+//   );
+// }
 }
