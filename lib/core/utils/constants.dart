@@ -15,6 +15,8 @@ class Routes {
   static const feedNamedPage = '/feed';
   static const motivationNamedPage = '/motivation';
   static const denunciationNamedPage = '/denunciation';
+  static const denunciationSingleNamedPage = '$denunciationNamedPage/donos';
+  static const denunciationSingleSubRoute = 'donos';
 }
 
 final navigationTabs = [
@@ -40,3 +42,11 @@ class ServerConst {
   static const String apiBaseUrl = 'https://1sim.ru/api2/';
   static const String imgBaseUrl = 'https://1sim.ru';
 }
+
+enum UserRole{
+  guest,
+  user,
+  gov,
+  admin
+}
+
