@@ -32,7 +32,7 @@ class _CustomTextButtonState1 extends State<CustomTextButton1> {
           TextButton(
             onPressed: widget.onTap,
             style: const ButtonStyle(
-              backgroundColor: MaterialStatePropertyAll(Colors.transparent),
+              backgroundColor: MaterialStatePropertyAll(Colors.deepPurpleAccent),
               shape: null,
             ),
             child: Text(

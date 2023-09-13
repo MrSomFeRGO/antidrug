@@ -1,4 +1,5 @@
 import 'package:antidrugs/core/widgets/cusom_button.dart';
+import 'package:antidrugs/core/widgets/custom_button_1.dart';
 import 'package:antidrugs/features/report_page/bloc/report_page_bloc.dart';
 import 'package:antidrugs/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,9 @@ class _ReportPageState extends State<ReportPage> {
     Icon? icona;
     String? uriPostPath;
     ThemeData theme = Theme.of(context);
+    ThemeData theme1 = ThemeData(
+      buttonTheme: ButtonThemeData(buttonColor: Colors.purple),
+    );
     return Material(
       child: BlocProvider.value(
         value: _reportPageBloc,
@@ -77,26 +81,33 @@ class _ReportPageState extends State<ReportPage> {
                         maxLines: 10,
                         style: const TextStyle(fontSize: 12),
                         decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
+                          iconColor: Colors.deepPurpleAccent,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.zero),
+                              borderSide:
+                                  BorderSide(color: Colors.deepPurpleAccent)),
                           hintText: 'Кратко опишите ситуацию',
                         ),
                       ),
                     ),
                     Column(
                       children: [
+                        CustomTextButton(
+                            theme: theme1,
+                            text: "Выберите фото",
+                            onTap: () {
+                              _reportPageBloc.add(ReportPageChooseFile());
+                            }),
+                        Container(
+                            alignment: Alignment.center,
+                            child: const Divider(
+                              color: Colors.deepPurpleAccent,
+                              thickness: 1.5,
+                            )),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 12),
                           child: CustomTextButton(
-                              theme: theme,
-                              text: "Выберите фото",
-                              onTap: () {
-                                _reportPageBloc.add(ReportPageChooseFile());
-                              }),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 12),
-                          child: CustomTextButton(
-                              theme: theme,
+                              theme: theme1,
                               text: "Отправить донос",
                               onTap: () {
                                 _reportPageBloc.add(UploadEvent(
