@@ -1,9 +1,12 @@
 import 'dart:math';
 
 import 'package:antidrugs/core/utils/constants.dart';
+import 'package:antidrugs/features/navigation/bloc/appbar_bloc.dart';
 import 'package:antidrugs/features/reports_list/dto/donosObj.dart';
 import 'package:antidrugs/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
 class ReportsListPage extends StatefulWidget {
@@ -44,6 +47,12 @@ class _ReportsListPageState extends State<ReportsListPage> {
       4.55,
     ),
   ];
+
+  @override
+  void initState() {
+    GetIt.I<AppbarBloc>().add(const AppbarAddTitle(title: 'Список доносов'));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
