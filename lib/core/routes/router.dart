@@ -1,5 +1,6 @@
 import 'package:antidrugs/core/utils/constants.dart';
 import 'package:antidrugs/features/auth/view/login_page.dart';
+import 'package:antidrugs/features/certain_report/view/certain_report.dart';
 import 'package:antidrugs/features/feed/view/feed_page.dart';
 import 'package:antidrugs/features/motivation/view/motivation_page.dart';
 import 'package:antidrugs/features/navigation/bloc/navigation_bloc.dart';
@@ -63,7 +64,7 @@ final GoRouter router = GoRouter(
                 path: Routes.denunciationSingleSubRoute,
                 builder: (context, state) {
                   DonosObj donos = state.extra as DonosObj;
-                  return LoginPage();
+                  return CertainReport(donos: donos);
                 }),
           ],
         ),

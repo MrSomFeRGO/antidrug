@@ -14,6 +14,9 @@ import 'package:flutter/services.dart';
 class $AssetsPngGen {
   const $AssetsPngGen();
 
+  /// File path: assets/png/dispose.png
+  AssetGenImage get dispose => const AssetGenImage('assets/png/dispose.png');
+
   /// File path: assets/png/first.png
   AssetGenImage get first => const AssetGenImage('assets/png/first.png');
 
@@ -24,7 +27,7 @@ class $AssetsPngGen {
   AssetGenImage get thrid => const AssetGenImage('assets/png/thrid.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [first, second, thrid];
+  List<AssetGenImage> get values => [dispose, first, second, thrid];
 }
 
 class $AssetsSvgGen {
